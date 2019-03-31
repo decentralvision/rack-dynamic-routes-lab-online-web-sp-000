@@ -10,7 +10,7 @@ class Application
         resp.write "#{@@items.select{|array_item| array_item.name == item}.first.price}"
       else
         resp.write "Item not found"
-        resp.status = 404
+        resp.status = 400
       end
     else
       resp.write "Route not found"
