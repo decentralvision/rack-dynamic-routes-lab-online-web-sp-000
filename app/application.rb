@@ -6,7 +6,8 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
-      if @@items
+      if Item.items.include(item)
+
     else
       resp.write "Item not found"
       resp.status = 404
