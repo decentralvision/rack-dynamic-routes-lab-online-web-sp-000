@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last
       if @@items.collect{|item| item.name}.include?(item)
-        resp.write "#{@@items.select{|array_item| array_item.name == item}.price}"
+        resp.write "#{@@items.select{|array_item| array_item.name == item}.first.price}"
       else
         resp.write "Item not found"
         resp.status = 404
