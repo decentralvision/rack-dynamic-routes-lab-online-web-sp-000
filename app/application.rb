@@ -7,7 +7,8 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last
       if Item.items.include(item)
-
+        Item.items.find(item).price
+      end
     else
       resp.write "Item not found"
       resp.status = 404
